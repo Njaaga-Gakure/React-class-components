@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Greeting,
+  State,
+  AltState,
+  ComplexState,
+  DidMount,
+  DidUpdate,
+  DidUpdateCont,
+  WillUnmount,
+  TodoList,
+} from "./components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    show: true,
+  };
+
+  toggle = () => {
+    this.setState((prevState) => ({ show: !prevState.show }));
+  };
+  render() {
+    return (
+      <main>
+        {/* <Greeting salutation="guten tag" />; */}
+        {/* <State /> */}
+        {/* <AltState /> */}
+        {/* <ComplexState /> */}
+        {/* <DidMount /> */}
+        {/* <DidUpdate /> */}
+        {/* <DidUpdateCont /> */}
+        {/* <div className="container">
+          <button onClick={this.toggle}>Toggle WindowTracker</button>
+          {this.state.show && <WillUnmount />}
+        </div> */}
+        <TodoList />
+      </main>
+    );
+  }
 }
 
 export default App;
